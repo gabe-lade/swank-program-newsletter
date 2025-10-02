@@ -1,14 +1,12 @@
-# Ohio Agricultural Crop Production Analysis (2000-2024)
+# Ohio Agricultural Production Analysis (2000-2024)
 
-An analysis of Ohio's major agricultural crop commodities from 2000-2024, including production value trends and geographic distribution across counties.
+An analysis of Ohio's major agricultural commodities from 2000-2024, including production value trends and geographic distribution across counties.
 
 ## Overview
 
 This project analyzes the production value of seven major Ohio crops over the past 24 years:
 - **Major crops**: Corn, Soybeans, Hay, Wheat
 - **Specialty crops**: Pumpkins, Oats, Maple Syrup
-- 
-Crops were selected based on [USDA's 2024 State Agricultural Overview](https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=OHIO).
 
 All monetary values are adjusted for inflation to 2024 dollars using the Consumer Price Index (CPI-U) from FRED.
 
@@ -25,6 +23,18 @@ The major crops (corn, soybeans, hay, and wheat) dominate Ohio's agricultural pr
 ![Ohio Specialty Crops](ohio_specialty_crops.png)
 
 Specialty crops like pumpkins, oats, and maple syrup represent smaller but important segments of Ohio agriculture.
+
+### Acreage Over Time
+
+#### Major Crops Acreage (2000-2024)
+![Ohio Major Crops Acreage](ohio_major_crops_acreage.png)
+
+Acres harvested for major crops showing trends in land allocation over time.
+
+#### Specialty Crops Acreage (2000-2024)
+![Ohio Specialty Crops Acreage](ohio_specialty_crops_acreage.png)
+
+Acres harvested for pumpkins and oats. Note: Maple syrup is excluded as it's measured by taps rather than acreage.
 
 ### Geographic Distribution (2022 Census)
 
@@ -146,10 +156,14 @@ source("code/20251003-newsletter.R")
 
 The script generates:
 
-1. **Console output**: Summary statistics table showing average values, total values, and individual year values (2022-2024) for each crop
-2. **Three PNG files**:
+1. **Console output**: 
+   - Summary statistics for production values showing average values, total values, and individual year values (2022-2024) for each crop
+   - Summary statistics for acreage showing average acres and individual year values (2022-2024) for each crop
+2. **Five PNG files**:
    - `ohio_major_crops.png` - Time series of major crop production values
    - `ohio_specialty_crops.png` - Time series of specialty crop production values
+   - `ohio_major_crops_acreage.png` - Time series of major crop acreage
+   - `ohio_specialty_crops_acreage.png` - Time series of specialty crop acreage (pumpkins and oats only)
    - `ohio_crops_county_map.png` - Grid of county-level heat maps for all crops
 
 ## Methodology
@@ -161,6 +175,14 @@ All dollar values are adjusted to 2024 dollars using the Consumer Price Index fo
 Real Value (2024$) = Nominal Value × (CPI_2024 / CPI_year)
 ```
 
+### Acreage vs. Value Analysis
+By comparing production value trends with acreage trends, the analysis can reveal:
+- Whether production value changes are driven by price fluctuations (value changes without acreage changes)
+- Whether they're driven by changes in planted area (both value and acreage move together)
+- Whether productivity improvements are occurring (value increases faster than acreage)
+
+Note: Maple syrup is excluded from acreage analysis as production is measured by taps in trees rather than harvested acreage.
+
 ### Geographic Data
 County-level production data comes from the 2022 Census of Agriculture. Counties with suppressed data (due to privacy rules) or no production appear in grey on the maps.
 
@@ -168,6 +190,7 @@ County-level production data comes from the 2022 Census of Agriculture. Counties
 - Some county-level data is suppressed by USDA to protect farmer privacy
 - 2024 data may be preliminary and subject to revision
 - Different crops use different production units (bushels, tons, gallons, acres)
+- **Note**: The script filters data to include only years 2000-2024.
 
 ## License
 
