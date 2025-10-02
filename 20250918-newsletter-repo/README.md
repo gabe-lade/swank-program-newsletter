@@ -60,7 +60,7 @@ This RDS file should contain an `sf` (simple features) object with the following
 - `rural_change_2020` - Change status from 2010 to 2020
 - `geometry` - Spatial geometry for each census block
 
-**Note**: The preprocessing steps to create this file from raw Census data are not included in this repository. The file represents census blocks with their urban/rural classification changes over time.
+**Note**: The preprocessing steps to create this file from raw Census data are not included in this repository. The file represents census blocks with their urban/rural classification changes over time. The file is too large to post in this repository. If you would like access to the file, email Gabe at lade.10@osu.edu. 
 
 ## File Structure
 
@@ -79,7 +79,7 @@ This RDS file should contain an `sf` (simple features) object with the following
 
 1. Clone this repository
 2. Install required R packages (see Prerequisites)
-3. Ensure `data/oh_join.rds` is in place
+3. Ensure `data/oh_join.rds` is in place (contact Gabe)
 4. Run the analysis script:
 
 ```r
@@ -141,35 +141,6 @@ Block-level changes are aggregated to county level by:
 ### Visualization Scale
 
 The heat map uses a square root transformation (`trans = "sqrt"`) to handle the wide range of conversion values across counties, making patterns visible for both high and low conversion counties.
-
-## Data Limitations
-
-- The analysis depends on Census Bureau definitions of urban/rural areas, which have evolved over time
-- Some census blocks may have boundary changes between decades
-- Small areas of conversion may not be visible at the county aggregation level
-- The preprocessed data file methodology is not documented here
-
-## Interpretation Notes
-
-- Counties with high conversion rates may indicate:
-  - Suburban expansion around major cities
-  - Economic development and population growth
-  - Infrastructure expansion
-  - Changes in land use patterns
-
-- Counties with low conversion rates may indicate:
-  - Stable rural character
-  - Lower population growth
-  - Agricultural or conservation land preservation
-
-## Potential Extensions
-
-This analysis could be extended to:
-- Include 2030 Census data (when available)
-- Analyze specific types of urban development (residential vs commercial)
-- Compare urbanization rates to population growth
-- Examine urbanization relative to transportation corridors
-- Correlate with economic indicators
 
 ## License
 
