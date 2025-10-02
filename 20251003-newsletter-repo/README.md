@@ -1,12 +1,13 @@
-# Ohio Agricultural Production Analysis (2000-2024)
+# Ohio Agricultural Crop Production Analysis (2000-2024)
 
-An analysis of Ohio's major agricultural commodities from 2000-2024, including production value trends and geographic distribution across counties.
+An analysis of Ohio's major agricultural crop commodities from 2000-2024, including production value trends and geographic distribution across counties.
 
 ## Overview
 
 This project analyzes the production value of seven major Ohio crops over the past 24 years:
 - **Major crops**: Corn, Soybeans, Hay, Wheat
 - **Specialty crops**: Pumpkins, Oats, Maple Syrup
+Crops were selected based on ![USDA's 2024 State Agricultural Overview](https://www.nass.usda.gov/Quick_Stats/Ag_Overview/stateOverview.php?state=OHIO).
 
 All monetary values are adjusted for inflation to 2024 dollars using the Consumer Price Index (CPI-U) from FRED.
 
